@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   vprodb:
-    image: vprocontainers/vprofiledb
+    image: sharagon1/vprofile-db:1.0
     ports:
       - "3306:3306"
     volumes:
@@ -23,14 +23,14 @@ services:
       - RABBITMQ_DEFAULT_PASS=guest
 
   vproapp:
-    image: vprocontainers/vprofileapp
+    image: sharagon1/vprofile-app:1.0
     ports:
-      - "8080:8080"
+      - "8081:8081"
     volumes: 
       - vproappdata:/usr/local/tomcat/webapps
 
   vproweb:
-    image: vprocontainers/vprofileweb
+    image: sharagon1/vprofile-web:1.0
     ports:
       - "80:80"
 volumes:

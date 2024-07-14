@@ -5,7 +5,7 @@ metadata:
   labels: 
     app: vproapp
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: vproapp
@@ -16,10 +16,10 @@ spec:
     spec:
       containers:
       - name: vproapp
-        image: vprofile/vprofileapp:v${BUILD_ID}
+        image: sharagon1/vprofile-app:1.0
         ports:
         - name: vproapp-port
-          containerPort: 8080
+          containerPort: 8081
       initContainers:
       - name: init-mydb
         image: busybox
